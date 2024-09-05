@@ -1,0 +1,167 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: rgb(166, 169, 173);
+  background: rgb(16, 33, 106);
+  background: linear-gradient(
+    180deg,
+    rgba(16, 33, 106, 1) 0%,
+    rgba(47, 126, 221, 1) 56%
+  );
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+
+  overflow: hidden;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  height: 100vh;
+}
+
+.content {
+  width: 200px;
+  height: 250px;
+  margin-top: 30px;
+}
+
+.header {
+  padding: 20px 20px 30px 20px;
+}
+.header h1 {
+  font-size: 50px;
+  color: rgb(166, 169, 173);
+  text-shadow: 2px 3px rgba(0, 0, 0, 0.4);
+}
+
+.header input {
+  width: 100%;
+  padding: 10px;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  border-bottom: 2px solid rgb(166, 169, 173);
+  text-align: center;
+  font-size: 20px;
+  color: rgb(166, 169, 173);
+}
+
+.city {
+  font-size: 30px;
+  font-style: italic;
+  font-weight: 500;
+  margin-bottom: 10px;
+  text-shadow: 2px 3px rgba(0, 0, 0, 0.4);
+}
+
+.temp {
+  font-size: 50px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  text-shadow: 2px 3px rgba(0, 0, 0, 0.9);
+}
+
+.desc {
+  font-size: 25px;
+  font-style: italic;
+  text-shadow: 2px 3px rgba(0, 0, 0, 0.4);
+  margin-bottom: 10px;
+}
+
+.minmax {
+  font-size: 25px;
+  font-style: italic;
+  text-shadow: 2px 3px rgba(0, 0, 0, 0.4);
+}
+
+.rain-drop {
+  display: none;
+  width: 2px;
+  height: 10px;
+  background-color: white;
+  position: absolute;
+  bottom: 100%;
+  animation: rain 1s linear infinite;
+}
+
+.snow-fall {
+  display: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  background-color: white;
+  position: absolute;
+  bottom: 100%;
+  animation: rain 1s linear infinite;
+}
+
+@keyframes rain {
+  to {
+    transform: translateY(100vh);
+  }
+}
+
+.weather {
+  width: 800px;
+}
+
+.sun {
+  display: none;
+  position: relative;
+  margin-left: 350px;
+  float: left;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: yellow;
+  box-shadow: 0 0 30px 15px rgba(224, 224, 21, 0.7);
+}
+
+.clouds {
+  display: none;
+  position: relative;
+  float: left;
+  width: 180px;
+  height: 80px;
+  border-radius: 100px;
+  filter: drop-shadow(1px 1px #383737);
+  background-color: #b9b9b9;
+  animation: dans 3s linear infinite;
+  
+}
+
+.weather .clouds::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: 20px;
+  width: 30%;
+  height: 60%;
+  border-radius: 50%;
+  background-color: #b9b9b9;
+  box-shadow: 60px 0px 0 20px #b9b9b9;
+}
+
+@keyframes dans {
+    0% {
+      transform: translateX(0px);
+    }
+    50% {
+      transform: translateX(40px);
+    }
+    100% {
+      transform: translateX(0px);
+    }
+  }
